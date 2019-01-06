@@ -1,2 +1,14 @@
 # springcloud
 springcloud project
+
+开启事务：
+启动类上添加注解@EnableTransactionManagement，服务中的方法添加注解@Transactional
+
+加入tx-lcn分布式事务
+lcn4.1不支持springboot2.0.x，需要从github上clone支持的分支，本地编译安装对应的几个jar包，然后修改tx-manager项目配置文件，调整eureka、redis配置，然后启动服务
+
+参与分布式服务调用的项目里需要添加maven依赖：transaction-springcloud、tx-plugins-db，起始服务方法上添加注解@TxTransaction(isStart=true)，内部调用的其它服务
+上添加@TxTransaction
+同时项目启动类EnableFeignClients注解中需要添加"com.codingapi.tx"
+
+本示例client项目调用server，server方法内执行本地事务和server1中的分布式事务，具体在BaseServiceImpl中getResult方法

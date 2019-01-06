@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xuyao</groupId>
-	<artifactId>server</artifactId>
+	<artifactId>server1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>server</name>
-	<description>server</description>
+	<name>server1</name>
+	<description>server1</description>
 
 	<parent>
 		<groupId>com.xuyao</groupId>
@@ -67,6 +67,7 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.10</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.codingapi</groupId>
 			<artifactId>transaction-springcloud</artifactId>
@@ -89,6 +90,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
